@@ -1,0 +1,8 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react", // 確保 JSX 支持
+    "types": ["expo-camera"] // 明確添加 expo-camera 類型
+  }
+}

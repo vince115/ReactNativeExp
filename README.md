@@ -14,7 +14,7 @@
 
 7. 簡單的影音播放器 (VideoPlayerApp)
 
-8. 掃描條碼與 QR Code 應用程式
+8. 掃描條碼與 QR Code 應用程式 (BarcodeScannerApp)
 
 9. 個人理財追蹤應用程式
 
