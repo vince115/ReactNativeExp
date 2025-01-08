@@ -12,7 +12,7 @@
 
 6. 貨幣轉換應用程式 (CurrencyConverterApp)
 
-7. 簡單的影音播放器
+7. 簡單的影音播放器 (VideoPlayerApp)
 
 8. 掃描條碼與 QR Code 應用程式
 
