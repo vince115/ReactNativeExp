@@ -1,4 +1,4 @@
-// # 主畫面
+//screens/HomeScreen.tsx
 import React, { useState, useEffect } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import CurrencyPicker from '../components/CurrencyPicker';
@@ -10,31 +10,45 @@ const currencyOptions = [
   { label: 'US Dollar (USD)', value: 'USD' },
   { label: 'Euro (EUR)', value: 'EUR' },
   { label: 'Japanese Yen (JPY)', value: 'JPY' },
+  { label: 'Taiwan Dollar (TWD)', value: 'TWD' }, 
 ];
 
 const HomeScreen: React.FC = () => {
   const [baseCurrency, setBaseCurrency] = useState<string>('USD');
-  const [targetCurrency, setTargetCurrency] = useState<string>('EUR');
+  const [targetCurrency, setTargetCurrency] = useState<string>('TWD');
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [amount, setAmount] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    let isMounted = true;
+  
     const getExchangeRate = async () => {
       setIsLoading(true); // 顯示加載動畫
       try {
         const data = await fetchExchangeRates(baseCurrency);
-        setExchangeRate(data.rates[targetCurrency]);
+        if (isMounted) {
+          setExchangeRate(data.rates[targetCurrency]);
+        }
       } catch (error) {
         console.error('Failed to fetch exchange rate:', error);
-        setExchangeRate(null);
+        if (isMounted) {
+          setExchangeRate(null);
+        }
       } finally {
-        setIsLoading(false); // 隱藏加載動畫
+        if (isMounted) {
+          setIsLoading(false); // 隱藏加載動畫
+        }
       }
     };
-
+  
     getExchangeRate();
+  
+    return () => {
+      isMounted = false;
+    };
   }, [baseCurrency, targetCurrency]);
+  
 
   return (
     <View style={styles.container}>
