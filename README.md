@@ -16,6 +16,6 @@
 
 8. 掃描條碼與 QR Code 應用程式 (BarcodeScannerApp)
 
-9. 個人理財追蹤應用程式
+9. 個人理財追蹤應用程式 (PerFinanceApp)
 
 10. Flashcard 學習應用程式

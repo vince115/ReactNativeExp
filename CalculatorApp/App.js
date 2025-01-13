@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { evaluate } from "mathjs";
 
 export default function App() {
   const [input, setInput] = useState("");
@@ -9,7 +10,9 @@ export default function App() {
   const handlePress = (value) => {
     if (value === "=") {
       try {
-        setResult(eval(input).toString());
+        // setResult(eval(input).toString());
+        const result = evaluate(input); // 使用 math.js 計算輸入表達式
+        setResult(result.toString());
       } catch (error) {
         setResult("Error");
       }
