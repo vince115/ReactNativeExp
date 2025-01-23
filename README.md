@@ -18,4 +18,4 @@
 
 9. 個人理財追蹤應用程式 (PerFinanceApp)
 
-10. Flashcard 學習應用程式
+10. Flashcard 學習應用程式 (FlashCardApp)
