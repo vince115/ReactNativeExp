@@ -1,0 +1,12 @@
+{
+  "name": "reactnativeexp",
+  "version": "1.0.0",
+  "description": "使用 React Native expo-app 建構的小型應用程式，幫助熟悉 React Native 的基本功能和 API 運用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
